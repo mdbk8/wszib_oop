@@ -1,4 +1,4 @@
-package com.mdbk.wszib_oop.week_1;
+package com.mdbk.wszib_oop.java.week_1;
 
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;

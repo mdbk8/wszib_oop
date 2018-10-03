@@ -1,4 +1,4 @@
-package com.mdbk.wszib_oop.week_1;
+package com.mdbk.wszib_oop.java.week_1;
 
 /**
  * Exercise 1:

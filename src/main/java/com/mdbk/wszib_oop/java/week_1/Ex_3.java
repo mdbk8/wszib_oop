@@ -1,4 +1,4 @@
-package com.mdbk.wszib_oop.week_1;
+package com.mdbk.wszib_oop.java.week_1;
 
 /**
  * Given an array of ints, return true if sequence of numbers 1, 2, 3 appears in the array somewhere.
