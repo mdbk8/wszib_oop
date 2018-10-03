@@ -9,9 +9,7 @@ public class Ex_3 {
         int length = values.length;
         for (int index = 0; index < length; index++) {
             if (index + 2 < length) {
-                if (values[index] == 1
-                        && values[index + 1] == 2
-                        && values[index + 2] == 3)
+                if (values[index] == 1 && values[index + 1] == 2 && values[index + 2] == 3)
                     return true;
             }
         }
