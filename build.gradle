@@ -2,6 +2,10 @@ plugins {
     id 'java'
 }
 
+ext {
+    junit5_version = '5.2.0'
+}
+
 group 'com.mdbk'
 version '1.0-SNAPSHOT'
 
@@ -12,5 +16,12 @@ repositories {
 }
 
 dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.12'
+    testImplementation "org.junit.jupiter:junit-jupiter-api:$junit5_version"
+    testImplementation "org.junit.jupiter:junit-jupiter-params:$junit5_version"
+
+    testRuntime "org.junit.jupiter:junit-jupiter-engine:$junit5_version"
+}
+
+test {
+    useJUnitPlatform()
 }
