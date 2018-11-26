@@ -9,10 +9,10 @@ public class EmailGenerator {
     }
 
     public String generateEmail(Person person) {
-        int numOfPersons = storage.doesPersonExist(person);
+        int numOfPersons = storage.howManyPersonsExist(person);
         String emailPostfix = "";
 
-        if (numOfPersons > 0) emailPostfix = "" + ++numOfPersons;
+        if (numOfPersons > 0) emailPostfix = "" + numOfPersons;
 
         return person.getSurname().toLowerCase() + "." + person.getName().toLowerCase() + emailPostfix + "@mex.com";
     }

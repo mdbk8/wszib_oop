@@ -8,18 +8,18 @@ class EmailStorageTest {
     private val tested = EmailStorage()
 
     @Test
-    fun `returns -1 when there is no other person with the same data`() {
+    fun `returns 0 when there is no other person with the same data`() {
         val person = Person("John", "Gill")
 
-        assertEquals(-1, tested.doesPersonExist(person))
+        assertEquals(0, tested.howManyPersonsExist(person))
     }
 
     @Test
-    fun `saves number of persons with the same data`() {
+    fun `saves number of persons with the same data and returns number of already existing`() {
         val person1 = Person("John", "Gill")
         val person2 = Person("John", "Gill")
 
-        assertEquals(-1, tested.doesPersonExist(person1))
-        assertEquals(1, tested.doesPersonExist(person2))
+        assertEquals(0, tested.howManyPersonsExist(person1))
+        assertEquals(1, tested.howManyPersonsExist(person2))
     }
 }

@@ -22,7 +22,7 @@ class EmailGeneratorTest {
     @ParameterizedTest
     @MethodSource("existingPersons")
     fun `generates proper email when there is already other person with the same name and surname`(testData: ExistingPerson) {
-        whenever(storageMock.doesPersonExist(testData.person)).thenReturn(testData.howMany)
+        whenever(storageMock.howManyPersonsExist(testData.person)).thenReturn(testData.howMany)
 
         assertEquals(testData.expectedEmail, tested.generateEmail(testData.person))
     }
@@ -32,8 +32,8 @@ class EmailGeneratorTest {
         @Suppress("unused")
         @JvmStatic
         fun existingPersons(): Stream<ExistingPerson> = Stream.of(
-                ExistingPerson(Person("Mat", "Dylan"), 1, "dylan.mat2@mex.com"),
-                ExistingPerson(Person("Jan", "Kowalski"), 100, "kowalski.jan101@mex.com")
+                ExistingPerson(Person("Mat", "Dylan"), 1, "dylan.mat1@mex.com"),
+                ExistingPerson(Person("Jan", "Kowalski"), 100, "kowalski.jan100@mex.com")
         )
     }
 
