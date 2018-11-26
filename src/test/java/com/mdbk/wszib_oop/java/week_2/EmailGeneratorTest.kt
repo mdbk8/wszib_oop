@@ -10,8 +10,8 @@ import java.util.stream.Stream
 
 class EmailGeneratorTest {
 
-    private val storageMock: EmailStorage = mock()
-    private val tested = EmailGenerator(storageMock)
+    private val storageMockInMemory: EmailStorage = mock()
+    private val tested = EmailGenerator(storageMockInMemory)
 
     @Test
     fun `generates proper emial when there is no other person with the same name and surname`() {
@@ -22,7 +22,7 @@ class EmailGeneratorTest {
     @ParameterizedTest
     @MethodSource("existingPersons")
     fun `generates proper email when there is already other person with the same name and surname`(testData: ExistingPerson) {
-        whenever(storageMock.howManyPersonsExist(testData.person)).thenReturn(testData.howMany)
+        whenever(storageMockInMemory.howManyPersonsExist(testData.person)).thenReturn(testData.howMany)
 
         assertEquals(testData.expectedEmail, tested.generateEmail(testData.person))
     }

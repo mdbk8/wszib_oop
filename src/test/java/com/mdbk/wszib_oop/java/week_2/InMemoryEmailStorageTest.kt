@@ -3,9 +3,9 @@ package com.mdbk.wszib_oop.java.week_2
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
-class EmailStorageTest {
+class InMemoryEmailStorageTest {
 
-    private val tested = EmailStorage()
+    private val tested = InMemoryEmailStorage()
 
     @Test
     fun `returns 0 when there is no other person with the same data`() {

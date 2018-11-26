@@ -4,9 +4,11 @@ import java.util.Scanner;
 
 public class MainEmailGenerator {
 
-    private static EmailGenerator generator = new EmailGenerator(new EmailStorage());
+    // TODO write FileEmailStorage
+    private static EmailGenerator generator = new EmailGenerator(new InMemoryEmailStorage());
 
     public static void main(String[] args) {
+        // TODO wrap below logic into some class and test
         Scanner scanner = new Scanner(System.in);
 
         do {
