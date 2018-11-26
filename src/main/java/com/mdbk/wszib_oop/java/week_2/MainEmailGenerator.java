@@ -23,7 +23,7 @@ public class MainEmailGenerator {
         String name = scanner.next();
 
         print("Enter surname: ");
-        String surname = scanner.nextLine();
+        String surname = scanner.next();
 
         String email = generator.generateEmail(new Person(name, surname));
         print("Email is : " + email);
