@@ -1,6 +1,5 @@
-package com.mdbk.wszib_oop.java.week_x;
+package com.mdbk.wszib_oop.java.week_4;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Scanner {

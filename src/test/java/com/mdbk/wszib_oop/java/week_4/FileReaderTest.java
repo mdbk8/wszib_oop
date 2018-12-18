@@ -1,8 +1,6 @@
-package com.mdbk.wszib_oop.java.week_x;
+package com.mdbk.wszib_oop.java.week_4;
 
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class FileReaderTest {
 

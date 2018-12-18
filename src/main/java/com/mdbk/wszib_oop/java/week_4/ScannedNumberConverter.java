@@ -1,4 +1,4 @@
-package com.mdbk.wszib_oop.java.week_x;
+package com.mdbk.wszib_oop.java.week_4;
 
 import java.util.List;
 
