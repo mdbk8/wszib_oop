@@ -3,10 +3,10 @@ package com.mdbk.wszib_oop.java.week_4;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LineParser {
+public class AccountNumberParser {
 
     // gets only three lines - one row of numbers
-    public List<ScannedNumber> parseLines(List<String> lines) {
+    public List<ScannedNumber> parseAccountNumber(List<String> lines) {
         String firstLine = lines.get(0);
         String secondLine = lines.get(1);
         String thirdLine = lines.get(2);

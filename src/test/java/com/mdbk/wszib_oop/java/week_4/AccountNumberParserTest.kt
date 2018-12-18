@@ -5,14 +5,14 @@ import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.MethodSource
 import java.util.stream.Stream
 
-class LineParserTest {
+class AccountNumberParserTest {
 
-    private val parser = LineParser()
+    private val parser = AccountNumberParser()
 
     @ParameterizedTest
     @MethodSource("properScannedNumbers")
     fun `creates proper ScannedNumber objects`(args: ScannedNumberArgs) {
-        val actual = parser.parseLines(args.stringInput.lines())
+        val actual = parser.parseAccountNumber(args.stringInput.lines())
 
         assertEquals(args.expectedList, actual)
     }
