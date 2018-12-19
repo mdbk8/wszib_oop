@@ -20,7 +20,7 @@ class AccountNumberParserTest {
     companion object {
         @Suppress("unused")
         @JvmStatic
-        fun properScannedNumbers(): Stream<ScannedNumberArgs> = Stream.of(
+        private fun properScannedNumbers(): Stream<ScannedNumberArgs> = Stream.of(
                 ScannedNumberArgs(
                         """
                     _  _  _  _  _  _  _  _  _
@@ -102,5 +102,5 @@ class AccountNumberParserTest {
         )
     }
 
-    data class ScannedNumberArgs(val stringInput: String, val expectedList: List<ScannedNumber>)
+   data class ScannedNumberArgs(val stringInput: String, val expectedList: List<ScannedNumber>)
 }
