@@ -24,7 +24,6 @@ public class ScannedNumberConverter {
         else if (number.equals(ScannedNumber.SEVEN)) return 7;
         else if (number.equals(ScannedNumber.EIGHT)) return 8;
         else if (number.equals(ScannedNumber.NINE)) return 9;
-
-        throw new IllegalArgumentException();
+        else return -1;
     }
 }
