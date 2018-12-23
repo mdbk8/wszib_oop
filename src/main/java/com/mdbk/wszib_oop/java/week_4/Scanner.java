@@ -10,11 +10,16 @@ public class Scanner {
     private FileReader reader;
     private AccountNumberParser accountNumberParser;
     private ScannedNumberConverter converter;
+    private ChecksumValidator validator;
 
-    public Scanner(FileReader reader, AccountNumberParser accountNumberParser, ScannedNumberConverter converter) {
+    public Scanner(FileReader reader,
+                   AccountNumberParser accountNumberParser,
+                   ScannedNumberConverter converter,
+                   ChecksumValidator validator) {
         this.reader = reader;
         this.accountNumberParser = accountNumberParser;
         this.converter = converter;
+        this.validator = validator;
     }
 
     // TODO write it in functional style
@@ -28,10 +33,12 @@ public class Scanner {
             List<String> list = Arrays.asList(lines.get(index), lines.get(index + 1), lines.get(index + 2));
 
             List<ScannedNumber> scannedNumbers = accountNumberParser.parseAccountNumber(list);
-            List<Integer> cardNumbers = converter.convertScannedNumbersToIntegers(scannedNumbers);
+            List<Integer> cardNumber = converter.convertScannedNumbersToIntegers(scannedNumbers);
 
-            String cardNumber = cardNumbers.stream().map(number -> number + "").collect(Collectors.joining());
-            numbers.add(cardNumber);
+            if (validator.validate(cardNumber)) {
+                String stringCardNum = cardNumber.stream().map(String::valueOf).collect(Collectors.joining());
+                numbers.add(stringCardNum);
+            }
 
             index += 2;
         }

@@ -12,8 +12,9 @@ class ScannerIntegrationTest {
     private val fileReader: FileReader = mock()
     private val accountNumberParser: AccountNumberParser = AccountNumberParser()
     private val converter = ScannedNumberConverter()
+    private val validator = ChecksumValidator()
 
-    private val tested by lazy { Scanner(fileReader, accountNumberParser, converter) }
+    private val tested by lazy { Scanner(fileReader, accountNumberParser, converter, validator) }
 
     @ParameterizedTest
     @MethodSource("cardNumbers")
@@ -39,12 +40,12 @@ class ScannerIntegrationTest {
                                 "  |  |  |  |  |  |  |  |  |",
                                 "  |  |  |  |  |  |  |  |  |",
                                 "                           ",
-                                " _  _  _  _  _  _  _  _  _ ",
-                                " _| _| _| _| _| _| _| _| _|",
-                                "|_ |_ |_ |_ |_ |_ |_ |_ |_ ",
+                                "    _  _     _  _  _  _  _ ",
+                                "  | _| _||_||_ |_   ||_||_|",
+                                "  ||_  _|  | _||_|  ||_| _|",
                                 "                           "
                         ),
-                        expectedCardNumbers = listOf("000000000", "111111111", "222222222")
+                        expectedCardNumbers = listOf("000000000", "123456789")
                 ),
                 ScannerArgs(
                         inputLines = listOf(
