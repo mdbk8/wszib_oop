@@ -7,7 +7,7 @@ import java.util.stream.IntStream;
 
 public class ChecksumValidator {
 
-    public boolean validate(List<Integer> cardNumber) {
+    public boolean hasCorrectChecksum(List<Integer> cardNumber) {
         List<Integer> cardNumberCopy = new ArrayList<>(cardNumber);
 
         Collections.reverse(cardNumberCopy);

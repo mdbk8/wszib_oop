@@ -12,7 +12,7 @@ internal class ChecksumValidatorTest {
     @ParameterizedTest
     @MethodSource("cardNumbers")
     fun `validates checksum`(arg: ChecksumArg) {
-        val actual = tested.validate(arg.cardNumber)
+        val actual = tested.hasCorrectChecksum(arg.cardNumber)
 
         assertEquals(arg.expectedResult, actual)
     }
