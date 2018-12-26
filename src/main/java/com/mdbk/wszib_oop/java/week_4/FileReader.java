@@ -22,8 +22,3 @@ public class FileReader {
         return null;
     }
 }
-
-// TODO create a class representing number with fields: top, middle, bottom, left1, left2, right1, right2
-//  one class is responsible for sending only valid lines, means skip every forth line, to another class
-//  that parses lines and creates SnannedNumber objects (9 of them)
-//  Another class is responsible for converting those ScannedNumber objects into integers

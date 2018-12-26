@@ -1,5 +1,6 @@
 package com.mdbk.wszib_oop.java.week_4;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -44,6 +45,11 @@ public class Scanner {
             index += 2;
         }
 
-        writer.write(accountNumbers);
+        try {
+            writer.write(accountNumbers);
+        } catch (IOException e) {
+            // TODO think about improving this useless code
+            e.printStackTrace();
+        }
     }
 }

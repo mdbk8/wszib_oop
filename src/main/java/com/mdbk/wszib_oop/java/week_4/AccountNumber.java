@@ -13,6 +13,14 @@ public class AccountNumber {
         this.status = status;
     }
 
+    public List<Integer> getNumber() {
+        return number;
+    }
+
+    public Status getStatus() {
+        return status;
+    }
+
     public enum Status {
         OK, ERR, ILL
     }

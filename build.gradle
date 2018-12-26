@@ -33,6 +33,7 @@ dependencies {
     testImplementation "com.nhaarman.mockitokotlin2:mockito-kotlin:2.0.0"
 
     testRuntime "org.junit.jupiter:junit-jupiter-engine:$junit5_version"
+    testCompile "junit:junit:4.12"
     compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
 }
 
