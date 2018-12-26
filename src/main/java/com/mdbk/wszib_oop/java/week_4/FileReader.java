@@ -11,8 +11,7 @@ import java.util.stream.Collectors;
 
 public class FileReader {
 
-    public List<String> readFile() {
-        File file = new File(getClass().getClassLoader().getResource("input").getFile());
+    public List<String> readFile(File file) {
         try (BufferedReader reader = Files.newBufferedReader(Paths.get(file.getAbsolutePath()), StandardCharsets.UTF_8)) {
             return reader.lines().collect(Collectors.toList());
         } catch (IOException e) {

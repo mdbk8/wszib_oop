@@ -1,10 +1,12 @@
 package com.mdbk.wszib_oop.java.week_4
 
+import com.nhaarman.mockitokotlin2.any
 import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.verify
 import com.nhaarman.mockitokotlin2.whenever
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.MethodSource
+import java.io.File
 import java.util.stream.Stream
 
 class ScannerIntegrationTest {
@@ -20,9 +22,9 @@ class ScannerIntegrationTest {
     @ParameterizedTest
     @MethodSource("cardNumbers")
     fun `returns list of account numbers`(args: ScannerArgs) {
-        whenever(fileReader.readFile()).thenReturn(args.inputLines)
+        whenever(fileReader.readFile(any())).thenReturn(args.inputLines)
 
-        tested.scanFile()
+        tested.scanFile(File(""))
 
         verify(accountNumberWriter).write(args.expectedAccountNumbers)
     }

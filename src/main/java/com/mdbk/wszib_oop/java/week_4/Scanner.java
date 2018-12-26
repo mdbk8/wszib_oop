@@ -1,5 +1,6 @@
 package com.mdbk.wszib_oop.java.week_4;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -27,8 +28,8 @@ public class Scanner {
     }
 
     // TODO write it in functional style
-    public void scanFile() {
-        List<String> lines = reader.readFile();
+    public void scanFile(File file) {
+        List<String> lines = reader.readFile(file);
         List<AccountNumber> accountNumbers = new ArrayList<>();
 
         for (int index = 0; index < lines.size(); index++) {
